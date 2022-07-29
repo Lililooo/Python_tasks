@@ -1,12 +1,12 @@
-price_all = 0
 while True:
     try:
-        ticket_number = input('Сколько билетов вы хотите приобрести на мероприятие? ')
-        ticket_number = int(ticket_number)
+        ticket_number = int(input('Здравствуйте! Сколько билетов на онлайн-конференцию вы хотите приобрести? '))
         if type(ticket_number) == int:
             break
     except ValueError:
         print('Введите целое число')
+
+price_all = 0
 for i in range(ticket_number):
     i += 1
     while True:
@@ -26,7 +26,7 @@ for i in range(ticket_number):
         except ValueError:
             print('Введите целое число')
 if ticket_number > 3:
-    price_all = price_all - ((price_all / 100) * 10)
-    print(f'Сумма к оплате {price_all} руб. с учетом 10%-ой скидки на полную стоимость заказа за регистрацию больше 3-х человек')
+    price_all = price_all - int(price_all * 0.1)
+    print(f'Сумма к оплате {price_all} руб., с учетом 10%-ой скидки на полную стоимость заказа, за регистрацию больше 3-х человек')
 else:
     print(f'Сумма к оплате {price_all} руб.')
